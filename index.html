@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0卡 | Zero Calorie</title>
     <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
             background-color: #000000;
             color: #ffffff;
@@ -15,77 +20,94 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
+        /* 标题样式 */
+        .title-group {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
         h1 {
             font-size: 3.5rem;
-            margin-bottom: 0;
-            text-align: center;
+            margin: 0;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
         }
-
-        h2 {
-            font-size: 2rem;
+        .title-en {
+            font-size: 1.8rem;
+            color: #666;
             margin-top: 0.5rem;
-            color: #888888;
-            text-align: center;
+            display: block;
         }
 
-        .content {
-            max-width: 800px;
-            margin: 2rem auto;
-            text-align: center;
-        }
-
-        .link-container {
-            display: flex;
-            gap: 1.5rem;  /* 缩小间距 */
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .link-box {
-            background-color: #1a1a1a;
-            padding: 1.5rem;  /* 缩小内边距 */
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            width: 180px;  /* 缩小宽度 */
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .link-box:hover {
-            transform: translateY(-5px);
-            background-color: #2a2a2a;
-        }
-
-        p {
+        /* 正文段落 */
+        .bilingual-paragraph {
             font-size: 1.2rem;
             line-height: 1.6;
-            color: #cccccc;
+            margin: 1.5rem 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+        .bilingual-paragraph .en {
+            display: block;
+            font-size: 1rem;
+            color: #888;
+            margin-top: 0.5rem;
         }
 
+        /* 链接按钮 */
+        .link-box {
+            background-color: #1a1a1a;
+            padding: 1.2rem;
+            border-radius: 10px;
+            width: 180px;
+            animation: fadeInUp 1s ease 0.9s forwards;
+            opacity: 0;
+        }
         .link-box h3 {
             margin: 0;
-            font-size: 1.1rem;  /* 缩小标题字号 */
+            font-size: 1.1rem;
+            line-height: 1.4;
         }
+        .link-box .en {
+            font-size: 0.9rem;
+            color: #777;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        /* 其他保留原有样式 */
+        .content { max-width: 800px; margin: 2rem auto; text-align: center; }
+        .link-container { display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center; }
+        .link-box:hover { transform: translateY(-5px); background-color: #2a2a2a; }
     </style>
 </head>
 <body>
-    <h1>0卡</h1>
-    <h2>zero calorie</h2>
+    <div class="title-group">
+        <h1>0卡</h1>
+        <span class="title-en" style="animation: fadeInUp 1s ease 0.3s forwards; opacity:0;">Zero Calorie</span>
+    </div>
     
     <div class="content">
-        <p>欢迎来到0卡的世界</p>
+        <p class="bilingual-paragraph">
+            欢迎来到0卡，本站不含任何可疑的热量！
+            <span class="en">Welcome to 0 Calories, this site does not contain any suspicious calories！</span>
+        </p>
         
         <div class="link-container">
             <a href="https://tan.13792486.best" class="link-box">
-                <h3>服务监控站</h3>
+                <h3>
+                    服务监控站
+                    <span class="en">Service Monitor</span>
+                </h3>
             </a>
             
             <a href="https://blog.yimen.org" class="link-box">
-                <h3>博客</h3>
+                <h3>
+                    本站博客
+                    <span class="en">Blog</span>
+                </h3>
             </a>
         </div>
     </div>
