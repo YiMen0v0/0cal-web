@@ -38,7 +38,7 @@
 
         .link-container {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;  /* 缩小间距 */
             margin-top: 3rem;
             flex-wrap: wrap;
             justify-content: center;
@@ -46,11 +46,11 @@
 
         .link-box {
             background-color: #1a1a1a;
-            padding: 2rem;
+            padding: 1.5rem;  /* 缩小内边距 */
             border-radius: 10px;
             text-decoration: none;
             color: white;
-            width: 200px;
+            width: 180px;  /* 缩小宽度 */
             transition: transform 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -65,6 +65,11 @@
             line-height: 1.6;
             color: #cccccc;
         }
+
+        .link-box h3 {
+            margin: 0;
+            font-size: 1.1rem;  /* 缩小标题字号 */
+        }
     </style>
 </head>
 <body>
@@ -75,11 +80,11 @@
         <p>欢迎来到0卡的世界</p>
         
         <div class="link-container">
-            <a href="https://tan.13792486.best" class="link-box" target="_blank">
+            <a href="https://tan.13792486.best" class="link-box">
                 <h3>服务监控站</h3>
             </a>
             
-            <a href="https://blog.yimen.org" class="link-box" target="_blank">
+            <a href="https://blog.yimen.org" class="link-box">
                 <h3>博客</h3>
             </a>
         </div>
